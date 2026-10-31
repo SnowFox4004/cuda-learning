@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "nvcc Generate Executable",
+      "type": "shell",
+      "command": "nvcc",
+      "args": [
+        // "-g",
+        // "-G",
+        "-o",
+        "${relativeFileDirname}/${fileBasenameNoExtension}.exe",
+        "${relativeFile}",
+        "-Xlinker",
+        "/NOIMPLIB",
+        "-Xlinker",
+        "/NOEXP"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    }
+  ]
+}
