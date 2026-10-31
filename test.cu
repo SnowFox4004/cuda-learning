@@ -2,14 +2,15 @@
 
 __global__ void hello()
 {
-    unsigned int bid = blockIdx.x;
-    unsigned int tid = threadIdx.x;
+    const int bid = blockIdx.x;
+    const int tid = threadIdx.x;
 
     printf("Hello from %d-%d\n", bid, tid);
 }
 
 int main()
 {
+    printf("Hello From CPU\n");
     hello<<<2, 4>>>();
     cudaDeviceSynchronize();
     return 0;
