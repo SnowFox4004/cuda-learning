@@ -1,1 +1,5 @@
 *.exe
+.clangd
+
+# nvim runner 编译产物
+.build/
